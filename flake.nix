@@ -64,7 +64,7 @@
               patches = [ ];
               cargoDeps = rustPlatform.importCargoLock { lockFile = ./Cargo.lock; };
               buildFeatures = [ "wayland" "x11" ];
-              buildInputs = old.buildInputs ++ [ pkgs.gtk-layer-shell ];
+              buildInputs = old.buildInputs ++ [ pkgs.gtk-layer-shell pkgs.libdbusmenu-gtk3 ];
             });
 
             eww-wayland = self'.packages.eww.overrideAttrs (_: { buildFeatures = [ "wayland" ]; });
